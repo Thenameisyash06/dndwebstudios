@@ -5,6 +5,31 @@
     --accent-teal: #23aab1;    /* Your original Teal */
     --glass-border: rgba(255, 255, 255, 0.1);
 }
+.commitment-steps {
+    display: flex;
+    justify-content: center; /* Centered on desktop */
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    
+    /* Scroll Logic */
+    overflow-x: auto;         /* Enable horizontal scroll */
+    padding: 20px 10px;       /* Space for shadows/breathing room */
+    scroll-snap-type: x mandatory; /* Makes it "snap" into place when swiping */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+}
+
+/* Ensure the steps don't shrink when scrolling */
+.step {
+    flex: 0 0 auto;           /* Prevents cards from squishing */
+    scroll-snap-align: center; /* Snaps the card to center when scrolling */
+    min-width: 150px;         /* Minimum width for each phase */
+}
+
+/* Hide the scrollbar for a cleaner "Studio" look */
+.commitment-steps::-webkit-scrollbar {
+    display: none;
+}
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
@@ -56,3 +81,90 @@ body::before {
     z-index: -1;
     opacity: 1; /* Keep opacity at 1 since the gradient handles the dimming */
 }
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 70px; /* Ensures a consistent bar height */
+        position: fixed;  /* Keeps the nav at the top while scrolling */
+        top: 0;
+        left: 0;
+        flex-direction: row !important; /* Forces horizontal layout */
+        align-items: center;
+        justify-content: space-between; /* Pushes logo and menu apart */
+        padding: 0 20px;
+        z-index: 1000;
+        border-radius: 0;
+        border-bottom: 1px solid var(--glass-border);
+    }
+
+    .navbar {
+        width: 100%;
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menubar {
+        flex-direction: row !important; /* Menu items in a line */
+        width: auto;
+        gap: 15px;
+    }
+
+    /* Adjusting the Home section to start below the new top bar */
+    .home {
+        margin-left: 0 !important;
+        margin-top: 80px; /* Creates space so content isn't hidden under the nav */
+        padding: 20px;
+    }
+
+    .studio-footer {
+        padding-left: 20px !important;
+        margin-left: 0;
+    }
+    .logo img {
+        max-height: 40px; /* Constrains the height in the top bar */
+        width: auto;
+    }
+    .commitment-steps {
+        justify-content: flex-start; /* Start from the left on mobile */
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .step-arrow {
+        flex: 0 0 auto; /* Keep arrows from disappearing */
+        font-size: 1.5rem;
+    }
+
+    .industry-tags {
+    display: flex;
+    flex-wrap: wrap;        /* This is the magic line: it allows tags to wrap */
+    gap: 12px;              /* Keeps spacing between tags even when they wrap */
+    margin-top: 20px;
+    width: 100%;            /* Ensures it stays within the parent card */
+    justify-content: flex-start; /* Aligns tags to the left */
+}
+
+.tag {
+    flex: 0 1 auto;         /* Allows tags to take their natural width but shrink if needed */
+    white-space: normal;    /* Allows text inside a tag to wrap if it's very long */
+    max-width: 100%;        /* Prevents a single long tag from breaking the screen */
+    word-break: break-word;
+}
+
+.process-steps{
+    grid-template-columns: 1fr;
+}
+}
+.menubar {
+    flex-wrap: nowrap; 
+    overflow-x: auto; /* Allows swiping through menu items if they overflow */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar for a cleaner look while keeping functionality */
+.menubar::-webkit-scrollbar {
+    display: none;
+}
+    

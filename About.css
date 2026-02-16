@@ -140,6 +140,20 @@ a:link, a:visited, a:hover, a:active {
     border-radius: 5px;
 }
 
+/* Update the container for your Process and Industries cards */
+.process-industry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't add to the width */
+}
+
+.industry-card {
+    max-width: 100%;
+    overflow: hidden; /* Safety net to prevent content spill */
+}
+
 /* Industry Tag Styling */
 .industry-tags {
     display: flex;
@@ -159,6 +173,21 @@ a:link, a:visited, a:hover, a:active {
     transition: 0.3s;
 }
 
+.industry-tags {
+    display: flex;
+    flex-wrap: wrap;        /* This is the magic line: it allows tags to wrap */
+    gap: 12px;              /* Keeps spacing between tags even when they wrap */
+    margin-top: 20px;
+    width: 100%;            /* Ensures it stays within the parent card */
+    justify-content: flex-start; /* Aligns tags to the left */
+}
+
+.tag {
+    flex: 0 1 auto;         /* Allows tags to take their natural width but shrink if needed */
+    white-space: normal;    /* Allows text inside a tag to wrap if it's very long */
+    max-width: 100%;        /* Prevents a single long tag from breaking the screen */
+    word-break: break-word;
+}
 .tag:hover {
     background: rgb(35, 170, 177);
     color: white;
