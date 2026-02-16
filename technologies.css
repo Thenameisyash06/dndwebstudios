@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    min-height: 100%; 
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/security_programming_hero.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    /* z-index: -1;  */
+}
+.home {
+    margin-left: 300px;
+    padding: 20px;
+    min-height: 200vh; 
+}
+.sidebar{
+    width: 300px; 
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(35, 170, 177); 
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+.navbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menubar{
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    width: 100%;
+}
+.menu-item:hover{
+    background-color: rgba(0, 0, 255, 0.425);
+}
+.menu-item{
+    width: 100%;
+    height: 50px;
+    transition: ease-in 0.3s;
+    background-color: rgb(35, 170, 177);
+    border: none;
+}
+.logo{
+    position: relative;
+    max-width: 100%;
+    height: auto;
+}
+li{
+    list-style: none;
+    height: auto;
+}
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none; 
+  color: inherit;        
+}
+.home {
+    margin-left: 300px;
+    padding-left: 50px;
+    margin-left: 300px; /* Matches your sidebar width */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.tech-section {
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.tech-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    
+    /* Elegant top border instead of an icon */
+    border-top: 4px solid rgb(35, 170, 177); 
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    
+    border-radius: 0 0 15px 15px; /* Round only the bottom corners */
+    padding: 40px 25px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle hover effect that fills the card background slightly */
+.tech-card:hover {
+    transform: translateY(-8px);
+    background: rgba(35, 170, 177, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tech-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px; /* Spaced out letters for a modern look */
+    color: rgb(35, 170, 177);
+    font-weight: 700;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.tech-list p {
+    font-size: 1.15rem; /* Large and readable */
+    /* color: #1a1a1a; */
+    margin-bottom: 12px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Faint divider between techs */
+    padding-bottom: 5px;
+}
+
+.tech-list p:last-child {
+    border-bottom: none;
+}

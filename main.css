@@ -1,0 +1,58 @@
+:root {
+    --bg-dark: #121212;        /* Deep black background */
+    --card-bg: rgba(30, 30, 30, 0.6); /* Translucent dark grey */
+    --text-main: #e0e0e0;      /* Soft white for readability */
+    --accent-teal: #23aab1;    /* Your original Teal */
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+}
+.card, .feature-item, .commitment-section,.main-footer {
+    /* 1. Semi-transparent background (White with 0.2 opacity) */
+    /* background: rgba(255, 255, 255, 0.3);  */
+    background: var(--card-bg) !important;
+    
+    /* 2. The Blur Effect */
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px); /* For Safari support */
+    
+    /* 3. High-quality borders to make the 'glass' pop */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+    /* 4. Shadow for depth */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    
+    border-radius: 15px;
+    padding: 25px;
+    color: #ffffff; /* Dark text for contrast against light glass */
+}
+/* Update your card, feature-item, and service-card selectors */
+.card, .service-card, .tech-card, .feature-item, .glass-form {
+    background: var(--card-bg) !important;
+    backdrop-filter: blur(15px);
+     border-radius: 15px;
+    border: 1px solid var(--glass-border);
+    padding: 25px;
+    color: var(--text-main);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); /* Stronger shadow for dark mode */
+}
+
+/* Make sure headings pop in Teal */
+.card h3, .service-card h3 {
+    color: var(--accent-teal) !important;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* This adds a 70% black tint over your image */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('./images/understanding-web-development-frameworks-og-image.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+    opacity: 1; /* Keep opacity at 1 since the gradient handles the dimming */
+}

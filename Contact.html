@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Contact.css">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <span class="sidebar">
+        <nav class="navbar">
+            <div class="logo"> <img src="./images/ChatGPT Image Feb 14, 2026, 08_01_59 PM.png" height="250px"
+                    width="300px" alt="logo" loading="lazy"></div>
+            <ul class="menubar">
+                <li><a href="index.html"><button class="menu-item"> Home</button></a></li>
+                <li><a href="Services.html"><button class="menu-item">Services</button></a></li>
+                <li><a href="technologies.html"><button class="menu-item">Technologies</button></a></li>
+                <li><a href="About.html"><button class="menu-item">About Us</button></a></li>
+                <li><a href=""><button class="menu-item">Contact Us</button></a></li>
+            </ul>
+        </nav>
+    </span>
+    <section class="home">
+        <div class="feedback-section">
+            <div class="tech-label">Get in Touch</div>
+            <h2 style="color: rgb(35, 170, 177);">Send Us Your Feedback</h2>
+            <form id="feedbackForm" class="glass-form" action="https://formspree.io/f/mwvnoznl" method="POST">
+
+                <div class="form-row">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+
+                <textarea id="message" name="message" placeholder="Your Feedback" rows="5" required></textarea>
+
+                <button type="submit" class="submit-btn">
+                    Send Feedback
+                </button>
+
+            </form>
+        </div>
+        <div id="feedbackModal" class="modal-overlay">
+    <div class="modal-content glass">
+        <div id="modalIcon" class="modal-icon"></div>
+        <h2 id="modalTitle" style="font-size: 1.5rem;">Success!</h2>
+        <p id="modalMessage">Your vision has been drafted. We will contact you soon.</p>
+        <button onclick="closeModal()" class="submit-btn">Continue</button>
+    </div>
+</div>
+        <footer class="studio-footer">
+            <div class="footer-grid">
+                <div class="footer-contact">
+                    <div class="tech-label" style="color: white;">Contact Us</div>
+                    <p>📧 <a href="mailto:info@dndwebstudios.com">info@dndwebstudios.com</a></p>
+                    <p>🌐 <a href="http://www.dndwebstudios.com">www.dndwebstudios.com</a></p>
+                    <p>📍 Location: India</p>
+                </div>
+
+                <div class="footer-social">
+                    <div class="tech-label" style="color: white;">Follow Our Journey</div>
+                    <div class="social-links">
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 DND Web Studios. All rights reserved.
+            </div>
+        </footer>
+    </section>
+    <script src="Contact.js"></script>
+</body>
+
+</html>
